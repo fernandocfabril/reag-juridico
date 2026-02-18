@@ -13,10 +13,12 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter, CharacterTextSplitter
 
+
 # Carregar as variáveis de ambiente do arquivo .env
 config = dotenv.dotenv_values()
 # Pasta onde o banco de dados vetorial do Chroma será armazenado
 db_dir = Path(config['CHROMA_DB_PATH'])
+
 
 # Criar o objeto de embeddings usando o modelo de linguagem da OpenAI
 embedding = OpenAIEmbeddings(
